@@ -1,3 +1,7 @@
+# Cypress
+cypress/videos
+cypress/screenshots
+
 # Cache and logs (Symfony2)
 /app/cache/*
 /app/logs/*
@@ -9,7 +13,7 @@
 
 # Cache, session files and logs (Symfony3)
 /var/cache/*
-/var/logs/*
+/var/log/*
 /var/sessions/*
 !var/cache/.gitkeep
 !var/logs/.gitkeep
@@ -28,6 +32,7 @@
 /var/bootstrap.php.cache
 /bin/*
 !bin/console
+!bin/phpunit
 !bin/symfony_requirements
 /vendor/
 
@@ -38,9 +43,10 @@
 # PHPUnit
 /app/phpunit.xml
 /phpunit.xml
+/.phpunit.result.cache
 
 # Build data
-/build/
+/public/build
 
 # Composer PHAR
 /composer.phar
@@ -50,3 +56,6 @@
 
 # Embedded web-server pid file
 /.web-server-pid
+
+# Docker
+/docker/database/data

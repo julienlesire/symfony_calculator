@@ -1,0 +1,81 @@
+.calculator__main {
+    @apply grid grid-cols-4 gap-4 m-2;
+}
+
+.calculator__screen {
+    @apply col-span-4 flex flex-row flex-wrap flex-auto;
+}
+
+.calculator__expression,
+.calculator__result {
+    @apply flex-grow text-right;
+}
+
+.calculator__result {
+    flex-basis: 100%;
+}
+
+.calculator__history {
+    @apply flex-shrink;
+}
+
+.calculator__history_icon {
+    @apply h-5;
+}
+
+.calculator__button {
+    @apply bg-gray-200 rounded-lg p-3;
+}
+
+.calculator__equals {
+    @apply bg-blue-500;
+}
+
+.calculator__title {
+    @apply text-center my-5 font-bold;
+}
+
+.calculator__content {
+    @apply flex flex-row flex-wrap gap-4;
+}
+
+.calculator__loading {
+    @apply inline;
+}
+
+.calculator__expression {
+    @apply flex flex-row place-content-end;
+}
+
+.calculator__expression_expression:not(:empty)::after {
+    content: "=";
+    @apply mx-1;
+}
+
+.calculator__menu {
+    @apply flex flex-col gap-2 overflow-y-auto z-10 absolute mt-5 max-h-40 bg-white;
+}
+
+.calculator__menu-hidden {
+    @apply hidden;
+}
+
+.calculator__screen,
+.calculator__menu,
+.calculator__menu_expression,
+.calculator__menu_result {
+    @apply border border-gray-200 rounded-lg p-2 focus:border-blue-200 select-none;
+}
+
+.calculator__menu_entry {
+    @apply flex flex-row gap-2;
+}
+
+.calculator__menu_expression,
+.calculator__menu_result {
+    @apply text-blue-400 hover:bg-gray-200;
+}
+
+.calculator__menu_equals {
+    @apply text-2xl text-gray-500;
+}

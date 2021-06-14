@@ -1,0 +1,33 @@
+{
+    "devDependencies": {
+        "@babel/preset-react": "^7.0.0",
+        "@symfony/webpack-encore": "^1.4.0",
+        "autoprefixer": "^10.2.6",
+        "core-js": "^3.0.0",
+        "postcss": "^8.3.2",
+        "regenerator-runtime": "^0.13.2",
+        "tailwindcss": "^2.1.4",
+        "webpack-notifier": "^1.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "dependencies": {
+        "cypress": "^7.5.0",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "glob-all": "^3.2.1",
+        "path": "^0.12.7",
+        "postcss-import": "^14.0.2",
+        "postcss-loader": "^6.1.0",
+        "postcss-nested": "^5.0.5",
+        "prop-types": "^15.7.2",
+        "purgecss-webpack-plugin": "^4.0.3",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    }
+}
