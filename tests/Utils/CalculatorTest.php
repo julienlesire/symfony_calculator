@@ -7,7 +7,7 @@ namespace App\Tests\Utils;
 use App\Utils\Calculator;
 use PHPUnit\Framework\TestCase;
 
-class CalculatorTestCase extends TestCase {
+class CalculatorTest extends TestCase {
     public function testBaseCase() {
         $this->assertEquals(1,
             Calculator::calculate('1')
