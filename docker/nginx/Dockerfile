@@ -1,9 +1,5 @@
 FROM nginx:alpine
-
 WORKDIR /var/www
-
-CMD ["nginx"]
-
-
-
+RUN apk --update --no-cache add bash
+CMD wait-for-it -t 0 php-fpm:9000 -- nginx
 EXPOSE 80 443

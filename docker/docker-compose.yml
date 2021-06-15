@@ -26,6 +26,7 @@ services:
       - DATABASE_URL=mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@database:3306/${DATABASE_NAME}?serverVersion=5.7
     volumes:
       - ..:/var/www
+      - ./wait-for-it.sh:/usr/bin/wait-for-it
 
   nginx:
     container_name: nginx
@@ -36,20 +37,19 @@ services:
       - ./nginx/sites/:/etc/nginx/sites-available
       - ./nginx/conf.d/:/etc/nginx/conf.d
       - ./logs:/var/log
+      - ./wait-for-it.sh:/usr/bin/wait-for-it
     depends_on:
       - php-fpm
     ports:
       - "80:80"
       - "443:443"
 
-  e2e:
+  cypress:
     container_name: cypress
     build: ./e2e
     depends_on:
       - nginx
-    environment:
-      - CYPRESS_baseUrl=http://nginx
-    command: npx cypress run
     volumes:
-      - ../cypress:/app/cypress
-      - ./e2e/cypress.json:/app/cypress.json
+      - ../cypress:/var/www/cypress
+      - ./e2e/cypress.json:/var/www/cypress.json
+      - ./wait-for-it.sh:/usr/bin/wait-for-it

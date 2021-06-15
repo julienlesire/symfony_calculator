@@ -11,7 +11,7 @@ You must have installed docker.
 
 2. Start the container :
 ```
-docker-compose up
+docker-compose -f ./docker/docker-compose.yml up
 ```
 
 3. Compile the project :
